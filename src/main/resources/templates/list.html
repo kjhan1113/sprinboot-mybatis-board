@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board List</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="board-list-container">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Writer</th>
+            <th>Date</th>
+            <th>Views</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Thymeleaf Loop for Board List -->
+        <tr th:each="board : ${boardList}">
+            <td th:text="${board.id}"></td>
+            <td th:text="${board.boardTitle}"></td>
+            <td th:text="${board.boardWriter}"></td>
+            <td th:text="${board.createdAt}"></td>
+            <td th:text="${board.boardViews}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="/save" class="button">Write</a>
+</div>
+</body>
+</html>

@@ -9,10 +9,10 @@
 <body>
 <div class="container">
     <h1>Board Data</h1>
-    <form action="#" method="POST">
+    <form action="/save" method="POST">
         <div class="form-group">
-            <label for="id">ID</label>
-            <input type="number" id="id" name="id" required>
+            <label for="boardTitle">title</label>
+            <input type="text" id="boardTitle" name="boardTitle" required>
         </div>
         <div class="form-group">
             <label for="boardWriter">writer</label>
@@ -23,20 +23,8 @@
             <input type="password" id="boardPass" name="boardPass" required>
         </div>
         <div class="form-group">
-            <label for="boardTitle">title</label>
-            <input type="text" id="boardTitle" name="boardTitle" required>
-        </div>
-        <div class="form-group">
             <label for="boardContents">Content</label>
-            <textarea id="boardContents" name="boardContents" rows="4" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="boardHits">Hit</label>
-            <input type="number" id="boardHits" name="boardHits" required>
-        </div>
-        <div class="form-group">
-            <label for="createdAt">Created Data</label>
-            <input type="datetime-local" id="createdAt" name="createdAt" required>
+            <textarea id="boardContents" name="boardContents" rows="10" required></textarea>
         </div>
         <div class="form-group">
             <button type="submit">Submit</button>

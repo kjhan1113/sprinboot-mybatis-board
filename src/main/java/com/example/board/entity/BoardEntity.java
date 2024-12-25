@@ -6,7 +6,7 @@ public class BoardEntity {
     private String boardPass;
     private String boardTitle;
     private String boardContents;
-    private int boardHits;
+    private int boardViews;
     private String createdAt;
 
     public Long getId() {
@@ -49,12 +49,12 @@ public class BoardEntity {
         this.boardContents = boardContents;
     }
 
-    public int getBoardHits() {
-        return boardHits;
+    public int getBoardViews() {
+        return boardViews;
     }
 
-    public void setBoardHits(int boardHits) {
-        this.boardHits = boardHits;
+    public void setBoardViews(int boardViews) {
+        this.boardViews = boardViews;
     }
 
     public String getCreatedAt() {
@@ -73,7 +73,7 @@ public class BoardEntity {
                 ", boardPass='" + boardPass + '\'' +
                 ", boardTitle='" + boardTitle + '\'' +
                 ", boardContents='" + boardContents + '\'' +
-                ", boardHits=" + boardHits +
+                ", boardHits=" + boardViews +
                 ", createdAt='" + createdAt + '\'' +
                 '}';
     }
