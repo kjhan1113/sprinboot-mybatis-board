@@ -26,4 +26,8 @@ public class BoardRepository {
     public void updateViews(Long id) {
         sqlTemplate.update("Board.updateViews", id);
     }
+
+    public BoardEntity findById(Long id) {
+        return sqlTemplate.selectOne("Board.findById", id);
+    }
 }

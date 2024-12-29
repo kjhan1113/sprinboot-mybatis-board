@@ -14,4 +14,8 @@
     <update id="updateViews" parameterType="Long">
         update board_table set boardViews=boardViews+1 where id=#{id}
     </update>
+    <select id="findById" parameterType="Long" resultType="board">
+        select id, boardTitle, boardWriter, boardContents, boardViews, date_format(createdAt, "%Y-%m-%d") as createdAt
+        from board_table where id=#{id}
+    </select>
 </mapper>

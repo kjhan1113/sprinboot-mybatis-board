@@ -48,12 +48,15 @@ public class BoardController {
         return "list";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     public String findById(@PathVariable("id") Long id, Model model) {
         // Update Views
         boardService.updateViews(id);
 
         // Detail Page by ID
+        BoardEntity boardEntity = boardService.findById(id);
+        model.addAttribute("board", boardEntity);
+        logger.warn("Board" + boardEntity);
         return "detail";
     }
 }

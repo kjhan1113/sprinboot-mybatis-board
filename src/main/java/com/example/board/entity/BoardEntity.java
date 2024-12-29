@@ -73,7 +73,7 @@ public class BoardEntity {
                 ", boardPass='" + boardPass + '\'' +
                 ", boardTitle='" + boardTitle + '\'' +
                 ", boardContents='" + boardContents + '\'' +
-                ", boardHits=" + boardViews +
+                ", boardViews=" + boardViews +
                 ", createdAt='" + createdAt + '\'' +
                 '}';
     }

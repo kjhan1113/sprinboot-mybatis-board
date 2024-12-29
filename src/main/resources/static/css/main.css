@@ -95,6 +95,7 @@ button:active {
     text-align: center;
     margin-top: 20px;
     display: inline-block;
+    text-decoration-line: none;
 }
 
 .button:hover {
@@ -130,3 +131,28 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #444;
 }
+
+/* Detail */
+.info-item {
+    margin-bottom: 50px;
+}
+
+.board-strong {
+    color: #bb86fc;
+}
+
+.board-span {
+    color: #e0e0e0;
+}
+
+.back-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+}
+

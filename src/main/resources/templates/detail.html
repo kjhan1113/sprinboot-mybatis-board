@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Detail</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <h1>Detail Page</h1>
+    <div class="container">
+        <div class="board-detail">
+            <h1>Board Detail</h1>
+            <div class="board-info">
+                <div class="info-item">
+                    <strong class="board-strong">ID:</strong>
+                    <span class="board-span" th:text="${board.id}"></span>
+                </div>
+                <div class="info-item">
+                    <strong class="board-strong">Writer:</strong>
+                    <span class="board-span" th:text="${board.boardWriter}"></span>
+                </div>
+                <div class="info-item">
+                    <strong class="board-strong">Title:</strong>
+                    <span class="board-span" th:text="${board.boardTitle}"></span>
+                </div>
+                <div class="info-item">
+                    <strong class="board-strong">Contents:</strong>
+                    <span class="board-span" th:text="${board.boardContents}"></span>
+                </div>
+                <div class="info-item">
+                    <strong class="board-strong">Views:</strong>
+                    <span class="board-span" th:text="${board.boardViews}"></span>
+                </div>
+                <div class="info-item">
+                    <strong class="board-strong">Created Date:</strong>
+                    <td class="board-span" th:text="${board.createdAt}"></td>
+                </div>
+                <a href="/list" class="button">Back to List</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -25,4 +25,8 @@ public class BoardService {
     public void updateViews(Long id) {
         boardRepository.updateViews(id);
     }
+
+    public BoardEntity findById(Long id) {
+        return boardRepository.findById(id);
+    }
 }
