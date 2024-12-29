@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="board-detail">
+        <div class="board-update">
             <h1>Board Detail</h1>
             <div class="board-info">
                 <div class="info-item">
@@ -35,7 +35,9 @@
                     <strong class="board-strong">Created Date:</strong>
                     <td class="board-span" th:text="${board.createdAt}"></td>
                 </div>
-                <a href="/list" class="button">Back to List</a>
+                <a href="/list" class="button">List</a>
+                <a th:href="@{|/update/${board.id}|}" class="button">Update</a>
+                <a th:href="@{|/delete/${board.id}|}" class="button">Delete</a>
             </div>
         </div>
     </div>

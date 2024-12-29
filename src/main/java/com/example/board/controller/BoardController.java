@@ -4,6 +4,7 @@ import com.example.board.entity.BoardEntity;
 import com.example.board.service.BoardService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,6 @@ public class BoardController {
 
     @PostMapping("/save")
     public String save(BoardEntity boardEntity) {
-        logger.warn("Board Entity : " + boardEntity);
         boardService.save(boardEntity);
         return "redirect:/list";
     }
@@ -44,7 +44,6 @@ public class BoardController {
     public String findAll(Model model) {
         List<BoardEntity> boardEntityList = boardService.findAll();
         model.addAttribute("boardList", boardEntityList);
-        logger.warn("BoardList" + boardEntityList);
         return "list";
     }
 
@@ -56,7 +55,13 @@ public class BoardController {
         // Detail Page by ID
         BoardEntity boardEntity = boardService.findById(id);
         model.addAttribute("board", boardEntity);
-        logger.warn("Board" + boardEntity);
         return "detail";
+    }
+
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable("id") Long id, Model model) {
+        BoardEntity boardEntity = boardService.findById(id);
+        model.addAttribute("board", boardEntity);
+        return "update";
     }
 }

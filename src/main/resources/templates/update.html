@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Detail</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="container">
+  <div class="board-update">
+    <h1>Board Update</h1>
+    <form th:action="@{|/update/${board.id}|}" method="post" class="board-form">
+      <div class="form-item">
+        <label for="boardTitle">Title:</label>
+        <input type="text" id="boardTitle" name="boardTitle" th:value="${board.boardTitle}" required>
+      </div>
+      <div class="form-item">
+        <label for="boardWriter">Writer:</label>
+        <input type="text" id="boardWriter" name="boardWriter" th:value="${board.boardWriter}" required>
+      </div>
+      <div class="form-item">
+        <label for="boardContents">Contents:</label>
+        <textarea id="boardContents" name="boardContents" required th:text="${board.boardContents}"></textarea>
+      </div>
+      <div class="form-item">
+        <label for="boardViews">Views:</label>
+        <input type="number" id="boardViews" name="boardViews" th:value="${board.boardViews}" disabled>
+      </div>
+      <div class="form-item">
+        <label for="createdAt">Created Date:</label>
+        <input type="text" id="createdAt" name="createdAt" th:value="${board.createdAt}" disabled>
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="button">Update</button>
+        <a href="/list" class="button">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
